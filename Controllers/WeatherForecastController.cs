@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using log4net;
 
 namespace MonitoringSystem.Controllers;
 
@@ -10,11 +11,13 @@ public class WeatherForecastController : ControllerBase
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
+    private static readonly ILog _log = LogManager.GetLogger(typeof(WeatherForecastController));
 
     private readonly ILogger<WeatherForecastController> _logger;
 
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
+        _log.Info($"MonitoringSystem");
         _logger = logger;
     }
 
