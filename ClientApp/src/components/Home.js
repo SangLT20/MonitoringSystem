@@ -10,7 +10,22 @@ export class Home extends Component {
   componentDidMount() {
     this.tickerId = setInterval(() => {
       //To do
-    }, 1000);
+      // const response = await fetch("FetchData");
+      // const data = await response.json();
+      // this.setState({ temperature: data.temperature });
+      // fetch("FetchData")
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log(data);
+      //     this.setState({ temperature: data.temperature });
+      //   });
+      this.populateData();
+    }, 2000);
+  }
+  async populateData() {
+    const response = await fetch("FetchData");
+    const data = await response.json();
+    this.setState({ temperature: data.temperature });
   }
   componentWillUnmount() {
     clearInterval(this.tickerId);

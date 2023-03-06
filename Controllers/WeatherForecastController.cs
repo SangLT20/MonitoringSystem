@@ -17,7 +17,7 @@ public class WeatherForecastController : ControllerBase
 
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
-        _log.Info($"MonitoringSystem");
+        _log.Info($"WeatherForecastController");
         _logger = logger;
     }
 
