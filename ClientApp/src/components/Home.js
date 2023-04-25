@@ -20,7 +20,7 @@ export class Home extends Component {
       //     this.setState({ temperature: data.temperature });
       //   });
       this.populateData();
-    }, 2000);
+    }, 1000);
   }
   async populateData() {
     const response = await fetch("FetchData");
